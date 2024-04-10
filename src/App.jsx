@@ -6,19 +6,19 @@ import Tracklist from './components/Tracklist/Tracklist';
 function App() {
   return (
     <>
-      <header>
-        <h1>
+      <header className={style['header']}>
+        <h1 className={style['header__title']}>
           Ja<span>mmm</span>ing
         </h1>
       </header>
-      <main>
+      <main className={style['main']}>
         <Searchbar />
-        <div>
+        <div className={style['main__container']}>
           <SearchResults />
           <Tracklist />
         </div>
       </main>
-      <footer>
+      <footer className={style['footer']}>
         <p>Copyright 2024 Tomás Arrativel</p>
       </footer>
     </>
