@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(31, 0, 18, 0.77),
+      rgba(31, 0, 18, 0.77)
+    ),
+    url('/background.jpg');
+  background-size: cover;
+}
