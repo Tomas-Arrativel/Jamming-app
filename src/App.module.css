@@ -52,3 +52,15 @@ body {
   color: #fff;
   gap: 3rem;
 }
+
+.footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #fff;
+  background-color: rgb(34, 1, 18);
+  position: absolute;
+  bottom: 0;
+}
