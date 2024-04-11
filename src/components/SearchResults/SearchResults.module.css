@@ -1,0 +1,17 @@
+.results {
+  width: 500px;
+  background-color: rgba(63, 4, 34, 0.8);
+  padding: 1rem 1.3rem;
+  min-height: 800px;
+}
+
+.results h2 {
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.results__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

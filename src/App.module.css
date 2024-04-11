@@ -17,6 +17,7 @@ body {
     ),
     url('/background.jpg');
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .header {
@@ -51,7 +52,7 @@ body {
   align-items: center;
   color: #fff;
   gap: 3rem;
-  width: 700px;
+  width: 1000px;
 }
 
 .footer {
@@ -62,6 +63,4 @@ body {
   padding: 2rem;
   color: #fff;
   background-color: rgb(34, 1, 18);
-  position: absolute;
-  bottom: 0;
 }
