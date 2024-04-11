@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import styles from './Searchbar.module.css';
-import SearchBtn from '../SearchBtn/SearchBtn';
+import style from './Searchbar.module.css';
 
 const Searchbar = () => {
   const [value, setValue] = useState('');
@@ -13,9 +12,18 @@ const Searchbar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type='text' value={value} onChange={handleChange} />
-      <input type='submit' value='Search' />
+    <form onSubmit={handleSubmit} className={style['searchForm']}>
+      <input
+        type='text'
+        className={style['searchForm__input']}
+        value={value}
+        onChange={handleChange}
+      />
+      <input
+        type='submit'
+        value='Search'
+        className={style['searchForm__btn']}
+      />
     </form>
   );
 };
