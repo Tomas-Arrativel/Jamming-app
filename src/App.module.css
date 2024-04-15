@@ -48,11 +48,11 @@ body {
 
 .main__container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: #fff;
-  gap: 3rem;
-  width: 1000px;
+  gap: 2rem;
+  min-width: 1000px;
 }
 
 .footer {
