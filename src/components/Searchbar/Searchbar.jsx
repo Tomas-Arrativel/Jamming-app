@@ -20,8 +20,11 @@ const Searchbar = ({ setSearchResults }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getResults(value);
-    setValue('');
+
+    if (value !== '') {
+      getResults(value);
+      setValue('');
+    } else return;
   };
 
   return (
