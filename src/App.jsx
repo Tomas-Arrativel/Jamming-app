@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './App.module.css';
 import Searchbar from './components/Searchbar/Searchbar';
 import SearchResults from './components/SearchResults/SearchResults';
@@ -49,6 +50,7 @@ export const data = [
 ];
 
 function App() {
+  const [searchResults, setSearchResults] = useState([]);
   return (
     <>
       <header className={style['header']}>
@@ -57,9 +59,9 @@ function App() {
         </h1>
       </header>
       <main className={style['main']}>
-        <Searchbar />
+        <Searchbar setSearchResults={setSearchResults} />
         <div className={style['main__container']}>
-          <SearchResults />
+          <SearchResults searchResults={searchResults} />
           <Tracklist />
         </div>
       </main>
