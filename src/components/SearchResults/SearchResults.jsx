@@ -1,7 +1,7 @@
 import styles from './SearchResults.module.css';
 import Track from '../Track/Track';
 
-const SearchResults = ({ searchResults }) => {
+const SearchResults = ({ searchResults, setAddedSongs }) => {
   return (
     <div className={styles['results']}>
       <h2>Results</h2>
@@ -13,6 +13,8 @@ const SearchResults = ({ searchResults }) => {
               artist={result.artist}
               album={result.album}
               key={result.id}
+              id={result.id}
+              setAddedSongs={setAddedSongs}
             />
           ))
         ) : (

@@ -51,6 +51,8 @@ export const data = [
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
+  const [addedSongs, setAddedSongs] = useState([]);
+
   return (
     <>
       <header className={style['header']}>
@@ -61,8 +63,11 @@ function App() {
       <main className={style['main']}>
         <Searchbar setSearchResults={setSearchResults} />
         <div className={style['main__container']}>
-          <SearchResults searchResults={searchResults} />
-          <Tracklist />
+          <SearchResults
+            searchResults={searchResults}
+            setAddedSongs={setAddedSongs}
+          />
+          <Tracklist addedSongs={addedSongs} />
         </div>
       </main>
       <footer className={style['footer']}>
