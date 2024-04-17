@@ -67,7 +67,7 @@ function App() {
             searchResults={searchResults}
             setAddedSongs={setAddedSongs}
           />
-          <Tracklist addedSongs={addedSongs} />
+          <Tracklist addedSongs={addedSongs} setAddedSongs={setAddedSongs} />
         </div>
       </main>
       <footer className={style['footer']}>

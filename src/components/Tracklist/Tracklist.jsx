@@ -1,7 +1,7 @@
 import Track from '../Track/Track';
 import styles from './Tracklist.module.css';
 
-const Tracklist = ({ addedSongs }) => {
+const Tracklist = ({ addedSongs, setAddedSongs }) => {
   return (
     <div className={styles['selected']}>
       <input
@@ -18,6 +18,8 @@ const Tracklist = ({ addedSongs }) => {
               album={song.album}
               id={song.id}
               key={song.id}
+              inPlaylist={true}
+              setAddedSongs={setAddedSongs}
             />
           ))
         ) : (
