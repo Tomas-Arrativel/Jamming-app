@@ -39,3 +39,7 @@
 .saveto__btn:hover {
   background-color: rgb(206, 5, 109);
 }
+
+.error {
+  color: rgb(192, 82, 186);
+}
