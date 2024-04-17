@@ -1,12 +1,18 @@
 import styles from './Track.module.css';
 
-const Track = ({ title, artist, album, setAddedSongs, id }) => {
-  const handleOnClick = () => {
+const Track = ({ title, artist, album, setAddedSongs, id, inPlaylist }) => {
+  const handleAddSong = () => {
     setAddedSongs((prevSongs) => {
       if (!prevSongs.some((song) => song.id == id)) {
         return [...prevSongs, { name: title, artist, album, id }];
       } else return [...prevSongs];
     });
+  };
+
+  const handleDeleteSong = () => {
+    setAddedSongs((prevSongs) =>
+      [...prevSongs].filter((song) => song.id !== id),
+    );
   };
 
   return (
@@ -19,9 +25,15 @@ const Track = ({ title, artist, album, setAddedSongs, id }) => {
           {album}
         </p>
       </div>
-      <button className={styles['track__btn']} onClick={handleOnClick}>
-        +
-      </button>
+      {inPlaylist ? (
+        <button className={styles['track__btn']} onClick={handleDeleteSong}>
+          -
+        </button>
+      ) : (
+        <button className={styles['track__btn']} onClick={handleAddSong}>
+          +
+        </button>
+      )}
     </div>
   );
 };
