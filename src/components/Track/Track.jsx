@@ -4,7 +4,10 @@ const Track = ({ title, artist, album, setAddedSongs, id, inPlaylist }) => {
   const handleAddSong = () => {
     setAddedSongs((prevSongs) => {
       if (!prevSongs.some((song) => song.id == id)) {
-        return [...prevSongs, { name: title, artist, album, id }];
+        return [
+          ...prevSongs,
+          { name: title, artist, album, id, uri: `fake-uri-${id}` },
+        ];
       } else return [...prevSongs];
     });
   };

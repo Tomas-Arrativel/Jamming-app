@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Track from '../Track/Track';
 import styles from './Tracklist.module.css';
 
-const Tracklist = ({ addedSongs, setAddedSongs, setPlaylists }) => {
+const Tracklist = ({ addedSongs, setAddedSongs, setPlaylist }) => {
   const [playlistName, setPlaylistName] = useState('');
   const [error, setError] = useState(false);
 
@@ -10,16 +10,18 @@ const Tracklist = ({ addedSongs, setAddedSongs, setPlaylists }) => {
     setPlaylistName(e.target.value);
   };
 
+  let uris = [];
+
   const handleCreatePlaylist = () => {
     if (playlistName.trim() === '' || addedSongs.length < 1) {
       setError(true);
       return;
     }
 
-    setPlaylists((prevPlaylists) => [
-      ...prevPlaylists,
-      { name: playlistName, songs: addedSongs },
-    ]);
+    setPlaylist({ name: playlistName, songs: addedSongs });
+
+    addedSongs.map((song) => uris.push(song.uri));
+    console.log(uris);
 
     setAddedSongs([]);
     setPlaylistName('');
