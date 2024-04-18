@@ -14,6 +14,7 @@ const SearchResults = ({ searchResults, setAddedSongs }) => {
               album={result.album}
               key={result.id}
               id={result.id}
+              uri={result.uri}
               setAddedSongs={setAddedSongs}
             />
           ))

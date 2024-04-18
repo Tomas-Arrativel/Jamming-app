@@ -1,13 +1,18 @@
 import styles from './Track.module.css';
 
-const Track = ({ title, artist, album, setAddedSongs, id, inPlaylist }) => {
+const Track = ({
+  title,
+  artist,
+  album,
+  setAddedSongs,
+  id,
+  uri,
+  inPlaylist,
+}) => {
   const handleAddSong = () => {
     setAddedSongs((prevSongs) => {
       if (!prevSongs.some((song) => song.id == id)) {
-        return [
-          ...prevSongs,
-          { name: title, artist, album, id, uri: `fake-uri-${id}` },
-        ];
+        return [...prevSongs, { name: title, artist, album, id, uri }];
       } else return [...prevSongs];
     });
   };
