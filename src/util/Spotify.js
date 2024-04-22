@@ -47,6 +47,7 @@ const Spotify = {
 
   async savePlaylist(name) {
     let userID = '';
+    let playlistID = '';
     try {
       const res = await fetch('https://api.spotify.com/v1/me', {
         headers: { Authorization: `Bearer ${accessToken}` },
@@ -67,7 +68,7 @@ const Spotify = {
         },
       );
       const data = await res.json();
-      console.log(data);
+      playlistID = data.id;
     } catch (e) {
       console.log(e);
     }
