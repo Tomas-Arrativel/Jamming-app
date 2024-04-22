@@ -56,6 +56,21 @@ const Spotify = {
     } catch (e) {
       console.log(e);
     }
+
+    try {
+      const res = await fetch(
+        `https://api.spotify.com/v1/users/${userID}/playlists`,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          method: 'POST',
+          body: JSON.stringify({ name: name }),
+        },
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
   },
 };
 
