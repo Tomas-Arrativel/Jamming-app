@@ -45,7 +45,7 @@ const Spotify = {
       });
   },
 
-  async savePlaylist(name) {
+  async savePlaylist(name, tracks) {
     let userID = '';
     let playlistID = '';
     try {
@@ -69,6 +69,21 @@ const Spotify = {
       );
       const data = await res.json();
       playlistID = data.id;
+    } catch (e) {
+      console.log(e);
+    }
+
+    try {
+      const res = await fetch(
+        `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          method: 'POST',
+          body: JSON.stringify({ uris: tracks }),
+        },
+      );
+      const data = await res.json();
+      console.log(data);
     } catch (e) {
       console.log(e);
     }
