@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Track from '../Track/Track';
 import styles from './Tracklist.module.css';
+import { Spotify } from '../../util/Spotify';
 
-const Tracklist = ({ addedSongs, setAddedSongs, setPlaylist }) => {
+const Tracklist = ({ addedSongs, setAddedSongs }) => {
   const [playlistName, setPlaylistName] = useState('');
   const [error, setError] = useState(false);
 
@@ -18,10 +19,9 @@ const Tracklist = ({ addedSongs, setAddedSongs, setPlaylist }) => {
       return;
     }
 
-    setPlaylist({ name: playlistName, songs: addedSongs });
-
     addedSongs.map((song) => uris.push(song.uri));
-    console.log(uris);
+
+    Spotify.savePlaylist(playlistName, uris);
 
     setAddedSongs([]);
     setPlaylistName('');
